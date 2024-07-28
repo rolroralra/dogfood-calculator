@@ -1,7 +1,13 @@
+# requirements.txt
+```bash
+pip install -r requirements.txt
+```
+
 # venv settings
 ```bash
 python3 -m venv myenv
 ```
+
 
 # openai install
 ```bash
