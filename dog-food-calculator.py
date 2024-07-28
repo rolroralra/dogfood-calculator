@@ -7,16 +7,16 @@ if 'result' not in st.session_state:
     st.session_state.result = False
 
 # Title
-st.title('강아지 사료 급여량 계산기 💻')
+st.title('🐶 사료 급여량 계산기 💻')
 
 
-st.write("### 🐶 강아지 정보 입력")
+st.write("### 🐶 정보 입력")
 
 col1, col2 = st.columns(2)
 
 with col1:
   # Weight input
-  weight = st.text_input("강아지 무게 (kg):")
+  weight = st.text_input("🐶 무게 (kg):")
 
   # Calories per gram input
   calories_per_gram = st.text_input("사료 무게 당 칼로리 (kcal/g):")
