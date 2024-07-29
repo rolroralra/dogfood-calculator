@@ -2,6 +2,12 @@ import streamlit as st
 import streamlit.components.v1 as components
 import math
 
+# Set the page configuration
+st.set_page_config(
+    page_title="강아지 사료 계산기",
+    page_icon="🐶",  # You can use emojis or a path to an image
+)
+
 # Initialize session state
 if 'result' not in st.session_state:
     st.session_state.result = False
