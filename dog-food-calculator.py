@@ -10,41 +10,35 @@ if 'result' not in st.session_state:
 st.title('🐶 사료 급여량 계산기 💻')
 
 
-st.write("### 🐶 정보 입력")
+# Weight input
+weight = st.text_input("🐶 무게 (kg):")
 
-col1, col2 = st.columns(2)
+# Calories per gram input
+calories_per_gram = st.text_input("🍫 사료 무게 당 칼로리 (kcal/g):")
 
-with col1:
-  # Weight input
-  weight = st.text_input("🐶 무게 (kg):")
+# Condition buttons
+conditions = [
+    {'label': '4개월 이하', 'value': '4개월이하'},
+    {'label': '5~12개월', 'value': '5~12개월'},
+    {'label': '중성', 'value': '중성'},
+    {'label': '비중성화', 'value': '비중성화'},
+    {'label': '비만', 'value': '비만'},
+    {'label': '체중감량', 'value': '체중감량'}
+]
 
-  # Calories per gram input
-  calories_per_gram = st.text_input("사료 무게 당 칼로리 (kcal/g):")
+condition_labels = [cond['label'] for cond in conditions]
+condition_values = [cond['value'] for cond in conditions]
 
-with col2:
-  # Condition buttons
-  conditions = [
-      {'label': '4개월 이하', 'value': '4개월이하'},
-      {'label': '5~12개월', 'value': '5~12개월'},
-      {'label': '중성', 'value': '중성'},
-      {'label': '비중성화', 'value': '비중성화'},
-      {'label': '비만', 'value': '비만'},
-      {'label': '체중감량', 'value': '체중감량'}
-  ]
-
-  condition_labels = [cond['label'] for cond in conditions]
-  condition_values = [cond['value'] for cond in conditions]
-
-  condition_selected = st.radio(
-      "",
-      condition_labels,
-      index=None,
-      key='condition_radio'
-  )
-  try:
-    condition = condition_values[condition_labels.index(condition_selected)]
-  except ValueError:
-    condition = None
+condition_selected = st.selectbox(
+    "🩺 강아지 나이",
+    condition_labels,
+    index=None,
+    key='condition_radio'
+)
+try:
+  condition = condition_values[condition_labels.index(condition_selected)]
+except ValueError:
+  condition = None
     
 # Check if inputs are valid
 def is_valid_input():
