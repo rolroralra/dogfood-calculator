@@ -36,7 +36,7 @@ condition_labels = [cond['label'] for cond in conditions]
 condition_values = [cond['value'] for cond in conditions]
 
 condition_selected = st.selectbox(
-    "🩺 강아지 나이",
+    "📆 강아지 나이",
     condition_labels,
     index=None,
     key='condition_radio'
