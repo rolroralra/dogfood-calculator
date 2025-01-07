@@ -33,7 +33,7 @@ def display_checkbox(header="Qustion Title", options=[1, 2, 3], other_option=Non
 
 
 if __name__ == "__main__":
-    st.title("CI/CD Conference Satisfaction Survey (due date: 1/10)")
+    st.title("Education Survey")
 
     email = st.text_input("Please enter your email address:")
 
